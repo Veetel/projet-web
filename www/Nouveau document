@@ -1,0 +1,8 @@
+curl -v :verbose
+curl -X COMMAND >>> applique le get/post etc
+curl -H"Accept-Language: en;q=0.1" >>>demande a dialoguer en english la qualité sert à définir la priorité.
+curl -v -H"If-Modified-Since:Mon, 18 Mar 2019 06:24:32 GMT" https://lmbp.uca.fr/~barrel/tp1/test.h
+
+ curl -v -H "User-Agent: Mozilla/5.0 (Nintendo Switch; WebApplet) AppleWebKit/609.4 (KHTML, like Gecko) NF/6.0.2.21.3 NintendoBrowser/5.1.0.22474" https://lmbp.uca.fr/~barrel/tp1/page.php
+ 
+ 
