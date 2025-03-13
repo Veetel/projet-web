@@ -34,7 +34,8 @@ body {
 	line-height: 2;
     color:white;
     background-color: black;
-    background-image: url("src/img/hellboycolorised");
+    background-image: url("src/img/hellboycolorised") ;
+    background-position: 35% 60px;
     background-repeat: no-repeat;
     /*padding: 5%;*/
     margin-top: 3%;
@@ -61,21 +62,25 @@ table {
 	border-spacing: 0;
 }
 
+
+
+
 header{
-    background-color: transparent;
-    height:50%;
-    width: 50%;
-    opacity: 25%;
-    background-size: cover;
-    padding-left: 0%;
-    padding-top: 0%;
-    text-decoration: none;
-    font-size: xx-large;
+    margin-left: -5%;
+    margin-bottom: 70px;
+}
+nav{
+    display:flex;
+    justify-content:space-around;
+    align-items: center;
 
+  
+    width: 100%;
+    background-image: radial-gradient(circle,rgb(45,45,45),black) ;
+    margin: auto;
+    position: fixed;
+    top: 0%;
     
-    
-    
-
 }
 #Sign{
     
@@ -86,11 +91,27 @@ a{
     color: white;
     text-decoration: none;
 }
+
+.navigation{
+    display: flex;
+    justify-content: space-evenly;
+    align-items:center ;
+    white-space: nowrap;
+    
+    list-style: none;
+    font-weight: bold;
+    font-size: larger;
+    margin: auto;
+}
+
 footer{
     background-image: linear-gradient(black 50%,rgb(59, 59, 59));
     background-size:auto;
     position:fixed;
+    align-items: center;
+    justify-content: space-evenly;
     
+    display: flex;
     bottom: 0;
     height: 2.5rem;
     width: 100%;
@@ -102,14 +123,16 @@ footer{
 
 article{
     
-    width: 80%;
+    width: 45%;
     display: block; 
     text-shadow: 1px 1px 30px black; 
     text-shadow: 1px 1px 30px black; 
-    backdrop-filter: brightness(65%) blur(3px);
+    backdrop-filter: brightness(55%) blur(3px);
     margin: auto;
-    margin-top: 25px;
-    
+    margin-top: 30px;
+    border-radius: 10px;
+    border: 3px solid gray;
+    padding: 1%;
 
 
 
@@ -130,12 +153,18 @@ h3{
 }
 article:hover {
 
-    backdrop-filter: brightness(30%) blur(3px);
+    backdrop-filter: brightness(18%) blur(3px);
+    box-shadow: 0px 0px 50px white;
+    padding : 1.5%;
+    
+   
+
     
 }
 
 .article{
     opacity: 100%;
+    transition: ease 1.5s all;
 
 
 }
@@ -143,21 +172,10 @@ article:hover {
 section{
     opacity: 1;
 }
-nav{
-    display:flex;
-    justify-content:space-evenly;
-    align-items: flex-end;
 
-  
-    width: 100%;
-    background-image: radial-gradient(circle,rgb(45,45,45),black);
-    margin: auto;
-    position: fixed;
-    top: 0%;
-    
-}
 
 .lien{
+    display: inline-block;
   
     padding: 0.3%;
     padding-left:  10%;    
@@ -165,28 +183,75 @@ nav{
     margin: 0 15px;
 
 
+
 }
 
-.navigation{
-    display: flex;
-    justify-content: space-around;
-    align-items:center ;
-    white-space: nowrap;
-    
-    list-style: none;
-    font-weight: bold;
-    font-size: larger;
-    margin: auto;
+.lien a{
+    color: whitesmoke;
+    background-color: transparent; 
+    padding: 10px;
+    display: block; 
+    border-radius: 10px;
+    transition: ease 1.5s all;
+
+
 }
 
-p.foot{
+.lien a:hover{
     
-    display: inline-block;
+    color:white;
+    box-shadow: 0px 0px  30px white;
+}
+
+
+
+
+.foot{
+    
+    display: block;
     padding-left: 3%;
+    padding-right: 3%;
     font-style: italic;
-    font-size: smaller;
-    text-align: center;
+    transition: ease 1.5s all;
 
+    text-align: center;
+   
+    border-radius: 10px;
+
+}
+footer a {
+    display: block;
+
+    padding-right: 5%;
+    font-style: italic;
+
+}
+
+
+footer figure {
+    display: inline-block;
+    padding: 0%;
+    margin-left: 25%;
+}
+
+footer figure img{
+    display: block;
+
+    width: 2rem;
+    height: 2rem;
+    padding: -50px;
+    border-radius: 50px;
+   
+   
+}
+
+a.foot:hover{
+    box-shadow: 0px 0px 20px white;
+    
+}
+
+footer figure img:hover{
+    box-shadow:0px 0px 20px white ;
 }
 input{
     width: 15%;
@@ -194,10 +259,21 @@ input{
     margin-left: 1%;
     margin-top: 10px;
     margin-bottom: 0px;
+    background-color: rgb(30,30,30);
+    color : white;
     
 }
+
 input.button{
     width: 5%;
+    display: block;
+    background-color: rgb(30,30,30);
+    border-radius: 10px;
+    color: white;
+    border: 5px ridge gray;
+}
+.button:hover{
+    box-shadow: 0px 0px 20px white;
 }
 
 
@@ -210,3 +286,68 @@ p{
     margin-top: 0;
 }
 
+
+form{
+    display: inline-block;
+    flex-wrap: wrap;
+    width: 60%;
+}
+
+
+label{
+    display: flex;
+    margin-top: 3%;
+    
+}
+
+
+
+
+
+
+
+
+
+@media (max-width:600px) {
+    header{
+       
+        position: fixed;
+        margin-bottom: 150px !important;
+        background-image: radial-gradient(circle,rgb(45,45,45),black)
+    }
+    footer {
+        display: block;
+        position:relative;
+        height: auto;
+        bottom: 0;
+        font-size: small;
+
+    }
+
+    nav{
+        position: absolute;
+        top: -80px;
+        display: flex;
+        justify-content: center;
+        
+        background-image: radial-gradient(circle,rgb(45,45,45),black);
+    }
+  .lien{
+    margin: 0;
+    padding:0;
+    display: block;
+    
+}
+    article{
+        margin: 70px;
+        width: 80%;
+        display: block;
+        position: relative;
+        
+    }
+    article:hover{
+        margin: 10%;
+        font-size: large;
+        width: 80%;
+    }
+}

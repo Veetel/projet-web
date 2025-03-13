@@ -7,41 +7,6 @@
     <head>
 
         <meta charset="utf-8"> 
-    </head>
-
-
-    <body>
-     
-        <p>
-            Nom:
-            <input name="Nom" id="name" placeholder="Nom"/>
-
-        </p>
-
-        <p>
-            Prénom:
-            <input name ="Prénom" id="Prenom" placeholder="Prénom"/> 
-        </p>
-        
-
-        <p>
-            Date de naissance:
-            <input name ="Date" placeholder="xx/xx/xxxx" type ="text" />
-        </p>
-         
-
-        <p>
-            Mot de Passe:       
-            <input name="Mdp" id="password" placeholder="mot de passe" type="password"/>
-        </p>
-
-        <p>
-            Adresse Mail:        
-            <input name="mail" placeholder="xxxxxx@yyy.zzz" type="email"/>
-        </p>
-
-        <p>        <input class = "button" id="sub" name ="submit" type="submit" value="valider" />
-        </p>
         <nav>
             <ul class="navigation">
                 <li class="lien"> <a href="../index.html"> Accueil</a></li>
@@ -53,6 +18,39 @@
             </ul>
 
         </nav>
+    </head>
+
+
+    <body>
+     
+        <form class="formulaire">
+            <label for ="name"> Nom :</label>
+            <input name="Nom" id="name" placeholder="Nom"/>
+
+
+            <label for="firstname"> Prénom : </label>
+            <input name ="Prénom" id="Prenom" placeholder="Prénom"/> 
+        
+        
+
+        
+            <label for="birthday" > Date de naissance</label>
+            <input name ="Date" placeholder="AAAA-MM-JJ" type ="text" />
+        
+         
+
+      
+            <label for="password ">Mot de Passe: </label>       
+            <input name="Mdp" id="password" placeholder="mot de passe" type="password"/>
+      
+
+            <label for="email">Adresse Mail:</label>        
+            <input name="mail" placeholder="xxxxxx@yyy.zzz" type="email"/>
+       
+        </form>
+        <input class = "button" id="sub" name ="submit" type="button" value="valider" />
+      
+
     </body>
 
 
