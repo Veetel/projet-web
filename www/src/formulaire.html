@@ -5,25 +5,35 @@
     <link rel="stylesheet" href="../a.css"/>
     
     <head>
+        <title>
+            Hellboy
 
-        <meta charset="utf-8"> 
-        <nav>
-            <ul class="navigation">
-                <li class="lien"> <a href="../index.html"> Accueil</a></li>
-                <li class="lien"> <a href="Mike_mignola.html">Mike Mignola </a></li>
-                <li class="lien"> <a href ="Hellboy.html"> Hellboy</a></li>
+        </title>
+        <meta charset="utf-8">
+        <meta name= "viewport" content=" width=device-width, initial-scale = 1.0">
 
-            
-            
-            </ul>
-
-        </nav>
     </head>
 
 
     <body>
+        
+
+        <header>
+            <nav>
+                <ul class="navigation">
+
+                    <li class="lien"> <a href="../index.html"> Accueil</a></li>
+                    <li class="lien"> <a href="Mike_mignola.html">Mike Mignola </a></li>
+                    <li class="lien"> <a href ="Hellboy.html"> Hellboy</a></li>
+    
+                
+                
+                </ul>
+    
+            </nav>
+        </header>
      
-        <form class="formulaire">
+        <form class="formulaire" method="post" action="../htbin/register.py">
             <label for ="name"> Nom :</label>
             <input name="Nom" id="name" placeholder="Nom"/>
 
@@ -48,12 +58,10 @@
             <input name="mail" placeholder="xxxxxx@yyy.zzz" type="email"/>
        
         </form>
-        <input class = "button" id="sub" name ="submit" type="button" value="valider" />
-      
+        <button id="sub" class="button"> Valider</button>      
 
     </body>
 
-
-    <script src="a.js"></script>
+    <script src="a.js" ></script>
 
 </html>

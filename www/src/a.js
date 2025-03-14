@@ -12,7 +12,7 @@ function get(){
     let regexMail =/^\S+@\S+.\S+$/;
     let regexPwd = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{12,}$/;
     
-
+    
 
 
 
@@ -22,7 +22,15 @@ function get(){
     let userpwd = document.getElementById("password");
     let useremail = document.getElementsByName("mail")[0];
     
+
+    let birthdateValue=birthdate.value;
+    const test = String.prototype.split(birthdateValue,3);
+    console.log(test);
+
+
+
     let a = Date.parse(birthdate.value);
+    console.log(a);
     
 
     if(firstname.value == "" || lastname.value =="" || birthdate.value == "" ){
@@ -36,7 +44,7 @@ function get(){
 
     if(isNaN(a)){
 
-        console.log("aie");
+        console.log("date non valide");
 
         alert("Date invalide");
 
@@ -58,7 +66,7 @@ function get(){
 
     fetch("../htbin/register.py",{ 
         method: "POST",
-        headers: {"Content-Type":"application/json"},
+        
         body:JSON.stringify(formData)
     })
 
@@ -77,3 +85,4 @@ function get(){
     console.log(Date.parse(birthdate.value));
 
 }
+
