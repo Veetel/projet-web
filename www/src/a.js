@@ -21,6 +21,7 @@ function get(){
     let birthdate = document.getElementsByName("Date")[0];
     let userpwd = document.getElementById("password");
     let useremail = document.getElementsByName("mail")[0];
+    let username = document.getElementById("username");
     
 
     let birthdateValue=birthdate.value;
@@ -56,6 +57,7 @@ function get(){
    
 
     let formData = {
+        username : username.value,
         firstname : firstname.value,
         useremail: useremail.value,
         userpwd: userpwd.value,
@@ -73,7 +75,7 @@ function get(){
     .then((response) =>{
         
         if(response.ok){
-            window.location.href ="../index.html";
+            // window.location.href ="../index.html";
 
         }
         else {
