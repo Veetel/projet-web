@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang = "fr-FR">
-    <link rel ="stylesheet" href ="a.css"/>
+    <link rel ="stylesheet" type="text/css" href ="./src/styles/stylesheet.css"/>
     <head>
         <title>
             Hellboy
@@ -15,14 +15,14 @@
 
 
 
-    <noscript>Javascript n'est pas activé, certaines fonctionalitée peuvent ne pas fonctionner</noscript>
+    <noscript> /!\ Javascript n'est pas activé, certaines fonctionalitée peuvent ne pas fonctionner /!\</noscript>
     <body>
         <header>
             <nav id="menu">
                 <ul class="navigation">
                     <li class="lien"> <a href="index.html"> Accueil</a></li>
-                    <li class="lien"> <a href="src/Mike_mignola.html">Mike Mignola </a></li>
-                    <li class="lien"> <a href ="src/Hellboy.html"> Les personnages</a></li>
+                    <li class="lien"> <a href="Mike_mignola.html">Mike Mignola </a></li>
+                    <li class="lien"> <a href ="Hellboy.html"> Les personnages</a></li>
                 
                 </ul>
 
@@ -30,15 +30,25 @@
 
 
         </header>
-        <form id="formlogin"  action="">
+
+        
+        <form id="formlogin"  action="POST">
+
             <div id="login-status"> Déconnecté </div>
-            <label for="username"> Nom d'utilisateur</label>
-            <input required type="text" id="usernamelogin" placeholder="Nom d'utilisateur" >
-            <label for="password">Mot de passe</label>
-            <input required type="password" id="passwordlogin" placeholder="Mot de passe">
-              
-                <input type="submit"  class="button" id="login" > </input>
-                <a href="src/formulaire.html" class="button" id="enregistrer"> S'enregistrer</a>
+
+            <div id="formFields">
+                <label for="usernamelogin"> Nom d'utilisateur</label>
+                <input required name="username" type="text" id="usernamelogin" placeholder="Nom d'utilisateur" >
+                
+                <label for="passwordlogin">Mot de passe</label>
+                <input required name="userpwd" type="password" id="passwordlogin" placeholder="Mot de passe">
+                  
+                <input type="submit"  class="button" id="logbutton"/>
+
+                <a href="formulaire.html" class="button" id="enregistrer"> S'enregistrer</a>
+            </div>
+            <button id="logout" class="button" style="display: none;">Se déconnecter</button>
+
           
         </form>
 
@@ -56,7 +66,7 @@
             <article class="article">
                 <h2> Résumé</h2>
                 <p>
-                    Anung Un Rama est né de l'union d'un démon et d'une humaine[2] et a vécu en enfer pendant sa jeunesse, jusqu'à ce qu'il soit invoqué en 1944 par Raspoutine. Le moine, ayant survécu à son assassinat de 1916, avait été engagé par Heinrich Himmler et travaillait donc pour le compte des nazis. Ces derniers comptaient utiliser la créature pour changer l'issue de la Seconde Guerre mondiale, mais l'invocation ne se déroula pas comme prévu et Anung Un Rama fut finalement recueilli et élevé par l'armée américaine et le professeur Trevor Bruttenholm, qui lui donna son nom : Hellboy (littéralement : « garçon de l'enfer »). Devenu adulte, il a intégré une agence spécialisée dans la lutte contre les menaces paranormales, le Bureau for Paranormal Research and Defense.
+                    Anung Un Rama est né de l'union d'un démon et d'une humaine   et a vécu en enfer pendant sa jeunesse, jusqu'à ce qu'il soit invoqué en 1944 par Raspoutine. Le moine, ayant survécu à son assassinat de 1916, avait été engagé par Heinrich Himmler et travaillait donc pour le compte des nazis. Ces derniers comptaient utiliser la créature pour changer l'issue de la Seconde Guerre mondiale, mais l'invocation ne se déroula pas comme prévu et Anung Un Rama fut finalement recueilli et élevé par l'armée américaine et le professeur Trevor Bruttenholm, qui lui donna son nom : Hellboy (littéralement : « garçon de l'enfer »). Devenu adulte, il a intégré une agence spécialisée dans la lutte contre les menaces paranormales, le Bureau for Paranormal Research and Defense.
 
                 </p>
 
@@ -66,7 +76,7 @@
                     Cependant, Hellboy apprend un jour que le B.P.R.D. avait placé une bombe dans Roger, pour parer à toute éventualité. Particulièrement remonté contre son employeur, il décide de démissionner et de partir en voyage. Sa quête le conduit à remonter les origines de sa lignée maternelle, liée à la royauté britannique, et à combattre le retour de la Reine des Sorcières…
                 </p>
                 
-                <p> L'équipe restante, constituée d'Abe Sapien, Liz Sherman et Roger, continue ses missions avec un nouveau membre, Johann Kraus. Par la suite, pour faire face à une invasion de monstres grenouilles et à la menace de nouveaux ennemis, le BPRD déménage dans un autre quartier général et accueille un nouveau leader, Benjamin Daimio, mystérieusement revenu à la vie après avoir été déclaré mort pendant plusieurs jours.Anung Un Rama est né de l'union d'un démon et d'une humaine[2] et a vécu en enfer pendant sa jeunesse, jusqu'à ce qu'il soit invoqué en 1944 par Raspoutine. Le moine, ayant survécu à son assassinat de 1916, avait été engagé par Heinrich Himmler et travaillait donc pour le compte des nazis. Ces derniers comptaient utiliser la créature pour changer l'issue de la Seconde Guerre mondiale, mais l'invocation ne se déroula pas comme prévu et Anung Un Rama fut finalement recueilli et élevé par l'armée américaine et le professeur Trevor Bruttenholm, qui lui donna son nom : Hellboy (littéralement : « garçon de l'enfer »). Devenu adulte, il a intégré une agence spécialisée dans la lutte contre les menaces paranormales, le Bureau for Paranormal Research and Defense.
+                <p> L'équipe restante, constituée d'Abe Sapien, Liz Sherman et Roger, continue ses missions avec un nouveau membre, Johann Kraus. Par la suite, pour faire face à une invasion de monstres grenouilles et à la menace de nouveaux ennemis, le BPRD déménage dans un autre quartier général et accueille un nouveau leader, Benjamin Daimio, mystérieusement revenu à la vie après avoir été déclaré mort pendant plusieurs jours.Anung Un Rama est né de l'union d'un démon et d'une humaine   et a vécu en enfer pendant sa jeunesse, jusqu'à ce qu'il soit invoqué en 1944 par Raspoutine. Le moine, ayant survécu à son assassinat de 1916, avait été engagé par Heinrich Himmler et travaillait donc pour le compte des nazis. Ces derniers comptaient utiliser la créature pour changer l'issue de la Seconde Guerre mondiale, mais l'invocation ne se déroula pas comme prévu et Anung Un Rama fut finalement recueilli et élevé par l'armée américaine et le professeur Trevor Bruttenholm, qui lui donna son nom : Hellboy (littéralement : « garçon de l'enfer »). Devenu adulte, il a intégré une agence spécialisée dans la lutte contre les menaces paranormales, le Bureau for Paranormal Research and Defense.
 
                     Il est aidé dans ses enquêtes par Liz Sherman, qui possède des talents de pyrokinésiste, et Abraham « Abe » Sapien, une créature amphibienne. Au fur et à mesure des épisodes, la distribution s'étoffe avec de nouveaux alliés comme Roger l'homoncule ou Lobster Johnson, un héros du passé.
                     
@@ -96,7 +106,7 @@
         </footer>
         
         
-        <script src="src/login.js"></script>
+        <script src="src/script/login.js"></script>
     </body>
 </html>
 

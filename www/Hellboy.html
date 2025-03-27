@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<html lang = "fr-FR">
+
+    <link rel ="stylesheet" type="text/css" href ="src/styles/stylesheet.css"/>
+    <title>
+        Personnages
+
+    </title>
+    <meta charset="utf-8">
+    <meta name= "viewport" content=" width=device-width, initial-scale = 1.0">
+<head></head>
+<body>
+    <header>
+        <nav>
+            <ul class="navigation">
+                <li class="lien"> <a href="index.html"> Accueil</a></li>
+                <li class="lien"> <a href="Mike_mignola.html"> Mike Mignola </a></li>
+    
+            
+            
+            </ul>
+    
+        </nav>
+    </header>
+    <main>
+                
+        <form id="formlogin"  action="POST">
+
+            <div id="login-status"> Déconnecté </div>
+
+            <div id="formFields">
+                <label for="usernamelogin"> Nom d'utilisateur</label>
+                <input required name="username" type="text" id="usernamelogin" placeholder="Nom d'utilisateur" >
+                
+                <label for="passwordlogin">Mot de passe</label>
+                <input required name="userpwd" type="password" id="passwordlogin" placeholder="Mot de passe">
+                  
+                <input type="submit"  class="button" id="logbutton"/>
+
+                <a href="formulaire.html" class="button" id="enregistrer"> S'enregistrer</a>
+            </div>
+            <button id="logout" class="button" style="display: none;">Se déconnecter</button>
+
+          
+        </form>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Personnage</th>
+                    <th>Nom</th>
+                    <th>Résumé</th>
+                
+                </tr>
+            
+            </thead>
+
+            <tbody>
+                <tr>
+                    <th> <figure>
+                        <img src="src/img/Abe_Sapien.webp" alt="Abe Sapien">
+                    </figure></th>
+
+                    <td>
+                        Abe Sapien
+                    </td>
+
+                    <td>
+                        Abe Sapien est un homme amphibien dont les origines ne sont révélées qu'au milieu de l'oeuvre. Abe tiens sont nom de Abraham Lincoln. Son passé énigmatique et ses nombreuses qualités font du personnage un de mes personnage préférés
+
+
+                    </td>
+                </tr>
+
+                <tr>
+                    <th> <figure> <img src="src/img/hellboy_4.webp" alt="Hellboy"></figure> </th>
+                    <td>Hellboy</td>
+                    <td>Hellboy est le principal personnage de l'oeuvre, son caractère "un peu soupe au lait" et son destin le rend très attachant. Hellboy a été invoqué sur terre par Raspoutine mais l'invocation tourne mal et il finit rec par le professeur Trevor Bruttenholm </td>
+                </tr>
+
+                <tr>
+                    <th> <figure><img src="src/img/Liz.webp" alt="Liz Sherman"></figure></th>
+                    <td> Liz Sherman</td>
+                    <td>Liz est une puissante magicienne torturée par ses traumas d'enfance, détestant le don qu'elle possède. Liz est un personnage déprimée et amère mais fortement attachée à l'équipe du BPRD (Bureau for Paranormal Research and Defense)</td>
+                </tr>
+
+                <tr>
+                    <th> <figure><img src="src/img/kate (1).jpg" alt="Kate Corrigan"></figure></th>
+                    <td>Kate Corrigan</td>
+                    <td>Kate est l'érudit de l'équipe, c'est connaissance en légendes et en ésotérisme fait d'elle l'un des personnages les plus important de l'oeuvre. Son amitié avec le reste du groupe fait qu'elle est souvent le pillier des relations du BPRD</td>
+
+                </tr>
+
+                <tr>
+                    <th> <figure><img src="src/img/Rasputin.webp" alt="Rasputin"></figure></th>
+                    <td>Rasputin</td>
+                    <td>Rasputin est le premier antagonniste important de l'oeuvre, sous la banières du 3eme Reich, il cherche est prêt à tout pour réussir ses plans. C'est ainsi qu'il invoquera Anung Un Rama, alias Hellboy, afin de reveiller Ogdru Jahad, un puissant dragon destructeur de monde, et détruire le monde grâce au projet "Ragnarok" (Je ne peux pas en dire plus sans en Spoil, car c'est beaucoup plus complexe que cela). </td>
+
+                </tr>
+
+                <tr>
+                    <th> <figure> <img src="src/img/Ogdru_Jahad.webp" alt="Ogdru_Jahad"></figure></th>
+                    <td> Ogdru Jahad </td>
+                    <td>Ogdru Jahad est présenté très tôt dans l'oeuvre. Il est le destructeur de monde, une monstruosité sans moralité dont le reveil est destiné et inévitable. </td>  
+                </tr>
+            </tbody>
+        </table>
+
+    </main>
+
+
+
+
+
+
+
+    <footer>
+        <p class="foot">Autheur : LARGERON Jean-Baptiste </p>
+        <p class="foot">@Contact:j-baptiste.largeron@etu.uca.fr </p>            
+    </footer>
+    <script src="src/script/login.js"></script>
+
+</body>
+</html>

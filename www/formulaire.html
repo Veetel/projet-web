@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+
+<html lang="fr-FR">
+    <link rel="stylesheet" type="text/css" href="src/styles/stylesheet.css"/>
+    
+    <head>
+        <title>
+            Hellboy
+
+        </title>
+        <meta charset="utf-8">
+        <meta name= "viewport" content=" width=device-width, initial-scale = 1.0">
+
+    </head>
+
+
+    <body>
+        
+
+        <header>
+            <nav>
+                <ul class="navigation">
+
+                    <li class="lien"> <a href="index.html"> Accueil</a></li>
+                    <li class="lien"> <a href="Mike_mignola.html">Mike Mignola </a></li>
+                    <li class="lien"> <a href ="Hellboy.html"> Personnage</a></li>
+    
+                
+                
+                </ul>
+    
+            </nav>
+        </header>
+     
+        <article id="formularArticle">       
+
+            <form class="formulaire" method="" action="">
+                <label for ="Nom"> Nom :</label>
+                <input required name="Nom" id="name" placeholder="Nom"/>
+
+
+                <label for="Prénom"> Prénom : </label>
+                <input required name ="Prénom" id="Prenom" placeholder="Prénom"/> 
+            
+            
+
+            
+                <label for="birthday" > Date de naissance</label>
+                <input required name ="birthday" id="birthday" placeholder="JJ/MM/AAAA" type ="text" />
+                
+            
+                <label for=" username"  > Nom d'utilisateur</label>
+                <input required name = "username" placeholder="" id="usernameform" type="text"/>
+
+        
+                <label for="password ">Mot de Passe: </label>       
+                <input required name="password" id="passwordform" placeholder="mot de passe" type="password"/>
+        
+
+                <label for="email">Adresse Mail:</label>        
+                <input required name="email" id="email" placeholder="xxxxxx@yyy.zzz" type="email"/>
+                <div id="errorBox"></div>
+
+                <input type="submit" id="sub" value="Valider" class="button"/>  
+       
+            </form>
+     
+        </article>
+    </body>
+
+    <script src="src/script/formulaire.js" ></script>
+
+</html>
