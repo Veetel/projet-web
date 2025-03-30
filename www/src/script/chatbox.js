@@ -1,120 +1,138 @@
+
+
+/*----------- Listen the document -----------*/
 document.addEventListener("DOMContentLoaded", function () {
 
+    /*--------- Get all things in document ----------- */
 
-
-
+    //we get data from document
+    // if const => we never change the value
     const chatForm = document.getElementById("chatsend");
     const chatInput = document.getElementById("chatInput");
     const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
     var errorBox = document.getElementById("errorBox");
 
 
-
+    // créate a <div> to put messages
     const messagesDiv = document.createElement("div");
     messagesDiv.id = "messages";
     messagesDiv.style = "height: 400px; width = auto; border: 1px solid #ccc; margin-top: 10px; padding: 5px;";
     
-    chatForm.parentNode.insertBefore(messagesDiv, chatForm); // insert messages above form
+    // insert messagesDiv before form
+    chatForm.parentNode.insertBefore(messagesDiv, chatForm); 
   
-    /**
-     * test pour verrifier si 
-     */
+   
+    //  check if user is connected
     if (!isLoggedIn) {
-        // désactiver le champ + bouton
-        chatInput.disabled = true;
+        // if he is not, it disabled the button and the input
+        chat.disabled = true;
         chatForm.querySelector("button[type='submit']").disabled = true;
       
-        // message d'alerte
-        errorBox.innerText = "Vous devez être connecté pour envoyer un message.";
+        // and it let a message to say he can t writte messages until he is connected
+        errorBox.innerText = " Attention : Vous devez être connecté pour envoyer un message.";
         errorBox.style = "color: red; font-weight: bold; margin-top: 10px;";
 
     }
     else{
+        //if he is logged, we change the erroBox to be sure he can't see it
         errorBox.style= "display: none;"
     }
 
 
+
+    /*------------------------- Function to load messages ------------------------- */
+
     /**
-     * @description Fonction qui lit les messages sur chat.dat
+     * @description function for reading messages and print them
      */
     function loadMessages() {
 
-        //on envoie le message avec fetch
+        //I prefer fetch than XMLHttpRequest so I used fetch
 
 
         fetch("../htbin/chatget.py")
 
 
-            //on analyse la reponse
+            //analyse the response
 
-            //on recupere les données de réponse que l'on transforme en JSON
+            //transform the response in JSON
             .then((res) => res.json())
 
-            //les data recuperer on va les écrire dans un paragraphe
+            //writte data in <p> paragraphe 
             .then((data) => {
 
-                //on va creer une nouvelle balise de type strong et pour chaque nouvel élément on va créer un 
-                //paragraphe p et a l'interieur une balise strong, celle-ci servira a mettre en avant les noms des personnes qui écrient
-
-                //ici on crée un élément, innerHTML permet de décrire l'élément qu'on veut creer et ses descendant
+                //So we create <strong> balises to highlight the username and the time when it was send
+                //create a element, innerHTML is used to describe elements, here we don't specify (see below)
                 messagesDiv.innerHTML = "";
 
-                //pour chaque message on crée un paragraphe
+                //for each message we create a <p> balise
                 data.forEach((msg) => {
                 const p = document.createElement("p");
 
-                //le paragraphe contient une balise <strong> et on récupère les données de data: time/user/msg (Merci Mr Barrel, c'est votre solution qui m'a mit
+                //here, <p> contain <strong> and we extract data from "data" variable: time/user/msg (Merci Mr Barrel, c'est votre solution qui m'a mit
                 // la puce a l'oreille de pouvoir traiter le message ainsi)
+                //here we can see a HTML code used with innerHTML, we will have something like this : [00:00] Username : "blablabla"
+                //$ is used because we re in a template string (did not work when I did not use it)
                 p.innerHTML = `<strong>[${msg.time}] ${msg.user} :</strong> ${msg.msg}`;
 
-                //puis on ajoute les nouveaux paragraphes à la div contenant les messages qui a été crée en haut
+                //then we add new paragraphs in the div we had create for it
+                //messagesDiv is now a table with HTML, written in string
                 messagesDiv.append(p);
             });
 
-            //si trop de message il fallait qu'on puiisse scroll
+            //if too much messages we need to scroll
             messagesDiv.scrollTop = messagesDiv.scrollHeight;
             });
     }
   
-  
-    /**
-     *
-     */
+
+
+
+    /*--------------- Listen the submit button --------------- */
+
+
     chatForm.addEventListener("submit", function (event) {
 
 
-        //on cancel le submit de base car on ne veut pas envoyer 2 fois
+        //Negate the HTML submit 
         event.preventDefault();
 
-        //on crée uin objet clé-valeur (msg: "message")
-        let data = {msg : chatInput.value.trim()};
+        //Create the message from the input
+        let message = chatInput.value.trim();
+        //force the data to be key:value and ok with Content-type : "application/x-www-form-urlencoded"
+        //we could use UrlSearchParams too
+        let data = "msg="+encodeURIComponent(message);
     
-        //on envoie le message dans data
+        //we send our new data object
         fetch("../htbin/chatsend.py", {
+            //specify the method
             method: "POST",
+            //specify the content
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: JSON.stringify(data)
+
+            //change the data in JSON
+            body: data
         })
 
-        //on analyse les reponses comme au dessus
+        //verrify the response
         .then((res) => res.json())
 
-        //si tout c est bien passé la réponse doit etre égale a 0
+        //if all ok, response should be 0
         .then((res) => {
             if (res.num === 0) {
-                //on vide la value de chatInput sinon l'utilisateur devra le faire à la main
+                //we remove text in
                 chatInput.value = "";
-                //puis on recharge les messages
+                //then we reload Messages
                 loadMessages();
 
-            //si on obtient un probleme on l'affiche dans la balise ErrorBox prévue à cet effet
+            //if we get an Error we put it in ErrorBox 
             } else {
                 errorBox.innerText = "Erreur : " + res.msg ;
             }
             });
     });
 
-    //on lit les messages en ouverture de pages ET tout les certains temps (ici 3000 milliseconde)
+    //we read message in the start of the script and each 3000 millisecondes
     loadMessages();
     setInterval(loadMessages, 3000);
 
