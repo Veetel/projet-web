@@ -462,19 +462,19 @@ strong{
 
 
 #logbutton,#logout{
-    width: 200%;
+    width: 135px;
     display: inline-block;
-    font-size: smaller;
+    font-size: 1em;
     margin: 5px;
     
 
 }
 
 #enregistrer{
-    width: 200% ;
+    width: 130px ;
     display: inline-block;
     padding: 0%;
-    font-size: smaller;
+    font-size: 1em;
 }
 #login-status{
     width: 200%;

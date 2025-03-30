@@ -93,6 +93,13 @@ document.addEventListener( "DOMContentLoaded",function(){
                                     //change the display of the logout button
                                     logout.style.display = "inline-block";
 
+                                    //check if errorBox is here (chatbox) and if it is, disable it
+                                    let errorBox = document.getElementById("errorBox");
+                                    if (errorBox){
+                                        errorBox.innerText = "";
+                                        errorBox.display = "none";
+                                    }
+
                                 }
                                 else{
                                     //if problem, print the message in the login box, in red

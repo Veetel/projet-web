@@ -1,6 +1,7 @@
 
 
 /*----------- Listen the document -----------*/
+
 document.addEventListener("DOMContentLoaded", function () {
 
     /*--------- Get all things in document ----------- */
@@ -9,7 +10,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // if const => we never change the value
     const chatForm = document.getElementById("chatsend");
     const chatInput = document.getElementById("chatInput");
-    const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
     var errorBox = document.getElementById("errorBox");
 
 
@@ -23,21 +23,25 @@ document.addEventListener("DOMContentLoaded", function () {
   
    
     //  check if user is connected
-    if (!isLoggedIn) {
-        // if he is not, it disabled the button and the input
-        chat.disabled = true;
-        chatForm.querySelector("button[type='submit']").disabled = true;
-      
-        // and it let a message to say he can t writte messages until he is connected
-        errorBox.innerText = " Attention : Vous devez être connecté pour envoyer un message.";
-        errorBox.style = "color: red; font-weight: bold; margin-top: 10px;";
+    setTimeout(() => {const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
 
-    }
-    else{
-        //if he is logged, we change the erroBox to be sure he can't see it
-        errorBox.style= "display: none;"
-    }
-
+        if (!isLoggedIn) {
+            // if he is not, it disabled the button and the input
+            chatInput.disabled = true;
+            chatForm.querySelector("button[type='submit']").disabled = true;
+          
+            // and it let a message to say he can t writte messages until he is connected
+            errorBox.style.display = "block";
+            errorBox.innerText = " Attention : Vous devez être connecté pour envoyer un message.";
+            errorBox.style = "color: red; font-weight: bold; margin-top: 10px;";
+    
+        }
+        else{
+            //if he is logged, we change the erroBox to be sure he can't see it
+            errorBox.style.display = "none";
+        }
+    },100);
+    
 
 
     /*------------------------- Function to load messages ------------------------- */
