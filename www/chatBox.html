@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html lang = "fr-FR">
+
+    <link rel ="stylesheet" type="text/css" href ="src/styles/stylesheet.css"/>
+    <title>Mignola</title>
+    <meta charset="utf-8">
+    <meta name= "viewport" content=" width=device-width, initial-scale = 1.0">
+
+<head></head>
+<body>
+    <header>
+
+
+        <nav>
+            <ul class="navigation">
+                <li class="lien"> <a href="index.html"> Accueil</a></li>
+                <li class="lien"> <a href="Hellboy.html">Personnages</a></li>
+    
+            
+            
+            </ul>
+    
+        </nav>
+    </header>
+    <main>
+        <form id="formlogin"  action="POST">
+
+            <div id="login-status"> Déconnecté </div>
+
+            <div id="formFields">
+                <label for="usernamelogin"> Nom d'utilisateur</label>
+                <input required name="username" type="text" id="usernamelogin" placeholder="Nom d'utilisateur" >
+                
+                <label for="passwordlogin">Mot de passe</label>
+                <input required name="userpwd" type="password" id="passwordlogin" placeholder="Mot de passe">
+                  
+                <input type="submit"  class="button" id="logbutton"/>
+
+                <a href="formulaire.html" class="button" id="enregistrer"> S'enregistrer</a>
+            </div>
+            <button id="logout" class="button" style="display: none;">Se déconnecter</button>
+
+          
+        </form>
+
+
+            <article>
+
+                <form  id="chatsend">
+                    <div id="errorBox"></div>
+                    <label for="chatInput">Message à envoyé</label>
+                    <input id="chatInput" type="text"/>
+                    <button type="submit" class="button" id="sub" required>Envoyer</button>
+                </form>
+            </article>
+        
+
+    </main>
+
+v
+
+
+
+<footer>
+    <p class="foot" id="author">Autheur : LARGERON Jean-Baptiste </p>
+    <p class="foot" id="contact" >@Contact:j-baptiste.largeron@etu.uca.fr </p>
+    <a class="foot" href="https://evil-one-comics.blogspot.com"> Boutique: Evil-One Comics Clermont-Ferrand</a>
+    
+
+
+    <a href="https://fr.wikipedia.org/wiki/Mike_Mignola">
+        <figure>
+            <img class="foot" src="src/img/Wikipedia-logo.png" alt="lien wikipedia">
+        </figure>
+    </a>            
+</footer>
+<script src="src/script/login.js"></script>
+ <script src="src/script/chatbox.js"></script>
+</body>
+</html>

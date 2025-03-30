@@ -149,13 +149,13 @@ article{
     display: block; 
     text-shadow: 1px 1px 30px black; 
     text-shadow: 1px 1px 30px black; 
-    backdrop-filter: brightness(55%) blur(3px);
+    backdrop-filter: brightness(55%) blur(7px);
     margin: auto;
     margin-top: 30px;
     border-radius: 10px;
     border: 3px solid gray;
     padding: 1%;
-    transition: ease 1.5s all;
+    transition: ease 0.5s all;
 
     z-index: 1;
 
@@ -165,7 +165,7 @@ article{
 
 article:hover {
 
-    backdrop-filter: brightness(8%) blur(3px);
+    backdrop-filter: brightness(8%) blur(7px);
     box-shadow: 0px 0px 50px white;
     padding : 1.5%;
     
@@ -224,7 +224,7 @@ h3{
     padding-left: 3%;
     padding-right: 3%;
     font-style: italic;
-    transition: ease 1.5s all;
+    transition: ease 0.5s all;
 
     text-align: center;
    
@@ -257,7 +257,9 @@ footer figure img:hover{
     box-shadow:0px 0px 20px white ;
 }
 
-
+#contact,#author{
+    padding-top: 25px;
+}
 
 /*-------------------------------------------- Link -----------------------------------------------*/
 
@@ -294,7 +296,7 @@ a{
     padding: 10px;
     display: block; 
     border-radius: 10px;
-    transition: ease 1.5s all;
+    transition: ease 0.5s all;
 
 
 
@@ -319,6 +321,7 @@ a.foot:hover{
 p a {
     text-decoration: underline;
     font-weight: bold;
+    color: lime;
 }
 
 
@@ -385,7 +388,7 @@ input{
     
 }
 #sub{
-    width: 60%;
+    width: 20%;
     font-size: small;
 }
 
@@ -404,6 +407,18 @@ input{
     color: red;
 }
 
+#message{
+    height: 25%;
+}
+strong{
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+
+#chatInput #sub{
+    width: 50%;
+}
 /*-------------------------------------------------------------------------------------------------*/
 
 
@@ -466,6 +481,7 @@ input{
     font-size: large;
 }
 
+
 /*-------------------------------------------------------------------------------------------------*/
 
 
@@ -481,7 +497,7 @@ table{
     border-collapse: collapse;
     border: 5px ridge rgb(30, 30, 30);
     backdrop-filter: brightness(20%);
-    transition: 1.5s;
+    transition: 0.5s;
     max-width: 65%;
 
 }
@@ -495,7 +511,7 @@ th,td{
     text-align: center;
     min-width: 200px;
     max-width: 600px;
-    transition: 0.3s;
+    transition: 0.5s;
     vertical-align: middle;
     font-size: 1.2em;
 
@@ -515,6 +531,7 @@ table img{
     width: 50%;
     height: 50%;
 }
+
 
 /*-------------------------------------------------------------------------------------------------*/
 
@@ -618,7 +635,7 @@ table img{
         border-collapse: collapse;
         border: 5px ridge rgb(30, 30, 30);
         backdrop-filter: brightness(20%);
-        transition: 1.5s;
+        transition: 0.5s;
         min-width: 120%;
     
     

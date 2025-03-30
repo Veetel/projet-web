@@ -63,6 +63,7 @@ document.addEventListener( "DOMContentLoaded",function(){
                                     let firstname  = splited[1];
                                     localStorage.setItem("firstname",firstname);
                                     localStorage.setItem("isLoggedIn","true");
+                                    localStorage.setItem("username",username.value);
                                     loginStatus.innerText = firstname+" Connecté";
                                     formFields.style.display = "none";
                                     logout.style.display = "inline-block";
